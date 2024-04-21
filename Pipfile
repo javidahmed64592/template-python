@@ -5,12 +5,8 @@ name = "pypi"
 
 [packages]
 
-
 [dev-packages]
-isort = "*"
-black = "*"
-flake8 = "*"
-mypy = "*"
+ruff = "*"
 
 [requires]
 python_version = "3.11"
