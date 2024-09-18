@@ -9,4 +9,7 @@ name = "pypi"
 ruff = "*"
 
 [requires]
-python_version = "3.11"
+python_version = "3.12"
+
+[scripts]
+ruff = "python -m ruff check ."
