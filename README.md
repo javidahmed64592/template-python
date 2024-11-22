@@ -17,7 +17,7 @@ Install the required dependencies using `pip`:
 
 To install with `dev` and `test` dependencies:
 
-    pip install -e .[dev, test]
+    pip install -e .[dev,test]
 
 ## Testing
 This library uses Pytest for the unit tests.
