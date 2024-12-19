@@ -28,7 +28,7 @@ To run the tests:
 
 ## Linting and Formatting
 This library uses `ruff` for linting and formatting.
-This is configured in `ruff.toml`.
+This is configured in `pyproject.toml`.
 
 To check the code for linting errors:
 
