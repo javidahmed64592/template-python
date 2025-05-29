@@ -33,7 +33,7 @@ dev = [
 ]
 
 [project.urls]
-repository = "https://https://github.com/javidahmed64592/template-python"
+repository = "https://github.com/javidahmed64592/template-python"
 
 [tool.pytest.ini_options]
 addopts = [
