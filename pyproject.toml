@@ -76,6 +76,10 @@ exclude = [
     "venv",
 ]
 
+extend-exclude = [
+    "src/**/__init__.py",
+]
+
 [tool.ruff.lint]
 select = [
     "A",
@@ -83,6 +87,7 @@ select = [
     "ASYNC",
     "B",
     "C4",
+    "D",
     "E",
     "EM",
     "F",
@@ -106,6 +111,8 @@ select = [
     "YTT",
 ]
 ignore = [
+    "D203",
+    "D213",
     "PLR0913",
     "S101"
 ]
