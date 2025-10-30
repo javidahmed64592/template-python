@@ -27,8 +27,7 @@ dev = [
     "mypy",
     "pytest",
     "pytest-cov",
-    "tomli",
-    "validate-pyproject>=0.24.1",
+    "validate-pyproject",
 ]
 
 [project.urls]
