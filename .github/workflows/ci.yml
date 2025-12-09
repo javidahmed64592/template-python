@@ -51,16 +51,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-python-dev
-      - name: Security check with bandit
+      - name: Security check
         run: |
           uv run bandit -r example/ -f json -o bandit-report.json || true
-          uv run bandit -r example/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bandit-report
+          path: bandit-report.json
   pip-audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-python-dev
-      - name: Audit dependencies with pip-audit
+      - name: Audit dependencies
         run: |
           uv run pip-audit --desc
   version-check:
