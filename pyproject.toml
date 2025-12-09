@@ -36,6 +36,13 @@ dev = [
 [project.urls]
 repository = "https://github.com/javidahmed64592/template-python"
 
+[tool.hatch.build]
+include = [
+  "example/**",
+  "README.md",
+  "LICENSE",
+]
+
 [tool.pytest.ini_options]
 addopts = [
     "-vv",
