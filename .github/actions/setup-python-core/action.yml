@@ -13,6 +13,16 @@ runs:
       uses: actions/setup-python@v5
       with:
         python-version-file: ".python-version"
+        cache: "pip"
+    - name: Cache uv dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cache/uv
+          .venv
+        key: uv-${{ runner.os }}-${{ hashFiles('uv.lock') }}
+        restore-keys: |
+          uv-${{ runner.os }}-
     - name: Install dependencies
       run: |
         uv sync
