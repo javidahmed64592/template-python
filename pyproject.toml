@@ -25,6 +25,7 @@ dependencies = [
 dev = [
     "ruff",
     "mypy",
+    "pre-commit",
     "pytest",
     "pytest-cov",
     "validate-pyproject",
