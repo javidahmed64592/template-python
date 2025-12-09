@@ -23,11 +23,13 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "ruff",
+    "bandit",
     "mypy",
+    "pip-audit",
     "pre-commit",
     "pytest",
     "pytest-cov",
+    "ruff",
     "validate-pyproject",
 ]
 
