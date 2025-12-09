@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a template Python repository demonstrating modern Python tooling with `uv`, `ruff`, `mypy`, and `pytest`. The project uses Python 3.12+ and follows strict type checking and linting standards.
+This is a template Python repository demonstrating modern Python tooling with `uv`, `ruff`, `mypy`, and `pytest`. The project uses Python 3.13+ and follows strict type checking and linting standards.
 
 ## Package Management with uv
 
@@ -10,14 +10,14 @@ This is a template Python repository demonstrating modern Python tooling with `u
 - Install dependencies: `uv sync` (core) or `uv sync --extra dev` (with dev tools)
 - Run commands: `uv run <command>` (e.g., `uv run pytest`, `uv run mypy .`)
 - Update dependencies: `uv lock --upgrade`
-- Version pinned in `.python-version` (currently 3.12)
+- Version pinned in `.python-version` (currently 3.13)
 
 ## Code Quality Standards
 
 ### Ruff Configuration (pyproject.toml)
 
 - Line length: 120 characters
-- Target: Python 3.12
+- Target: Python 3.13
 - Extensive rule selection including: type annotations (ANN), docstrings (D), performance (PERF), pandas (PD), numpy (NPY)
 - **Docstring convention**: Google style via `[tool.ruff.lint.pydocstyle]`
 - **Ignored rules**: D203, D213 (conflicting docstring rules), PLR0913 (too many arguments), S101 (assert allowed in tests)
