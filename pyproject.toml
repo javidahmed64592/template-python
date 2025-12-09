@@ -23,15 +23,25 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "ruff",
+    "bandit",
     "mypy",
+    "pip-audit",
+    "pre-commit",
     "pytest",
     "pytest-cov",
+    "ruff",
     "validate-pyproject",
 ]
 
 [project.urls]
 repository = "https://github.com/javidahmed64592/template-python"
+
+[tool.hatch.build]
+include = [
+  "example/**",
+  "README.md",
+  "LICENSE",
+]
 
 [tool.pytest.ini_options]
 addopts = [
@@ -40,6 +50,19 @@ addopts = [
     "--cov-report",
     "term-missing",
 ]
+
+[tool.coverage.run]
+branch = true
+source = ["example"]
+omit = [
+    "tests/*",
+    "*/__init__.py",
+]
+
+[tool.coverage.report]
+fail_under = 80
+skip_covered = false
+show_missing = true
 
 [tool.ruff]
 target-version = "py312"
@@ -127,6 +150,9 @@ quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
 
 [tool.mypy]
 warn_unused_configs = true

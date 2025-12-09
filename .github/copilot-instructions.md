@@ -19,6 +19,7 @@ This is a template Python repository demonstrating modern Python tooling with `u
 - Line length: 120 characters
 - Target: Python 3.12
 - Extensive rule selection including: type annotations (ANN), docstrings (D), performance (PERF), pandas (PD), numpy (NPY)
+- **Docstring convention**: Google style via `[tool.ruff.lint.pydocstyle]`
 - **Ignored rules**: D203, D213 (conflicting docstring rules), PLR0913 (too many arguments), S101 (assert allowed in tests)
 - `__init__.py` files excluded from linting via `extend-exclude`
 
@@ -32,10 +33,30 @@ This is a template Python repository demonstrating modern Python tooling with `u
 
 - Configuration in `pyproject.toml` under `[tool.pytest.ini_options]`
 - Always run with coverage: `uv run pytest` (coverage enabled by default via `addopts`)
+- **Coverage requirements**: Minimum 80% coverage enforced via `fail_under = 80`
+- **Branch coverage enabled**: Tracks both line and branch coverage
 - Coverage report format: `term-missing` shows uncovered lines
 - Test files in `tests/` directory follow `test_*.py` naming
 
+### Security Scanning
+
+- **bandit** - scans Python code for security vulnerabilities
+- **pip-audit** - audits dependencies for known security issues
+- Both run automatically in CI pipeline
+- Run locally: `uv run bandit -r example/` and `uv run pip-audit`
+
 ## Development Workflow
+
+### Pre-commit Hooks
+
+- **Install hooks**: `uv run pre-commit install` (run once after cloning)
+- Hooks run automatically on `git commit` and check:
+  - Ruff formatting and linting (with auto-fix)
+  - mypy type checking
+  - Trailing whitespace, YAML syntax, TOML syntax
+  - Merge conflicts and large files
+- **Run manually**: `uv run pre-commit run --all-files`
+- Configuration in `.pre-commit-config.yaml`
 
 ### Before Committing
 
@@ -46,13 +67,15 @@ This is a template Python repository demonstrating modern Python tooling with `u
 
 ### CI Pipeline (.github/workflows/ci.yml)
 
-The CI runs 5 jobs in parallel:
+The CI runs 7 jobs in parallel:
 
 1. `validate-pyproject` - validates pyproject.toml structure with `validate-pyproject`
 2. `ruff` - linting with `uv run -m ruff check`
 3. `mypy` - type checking with `uv run -m mypy .`
-4. `test` - pytest with HTML coverage report (uploaded as artifact)
-5. `version-check` - ensures version consistency between `pyproject.toml` and `uv.lock`
+4. `test` - pytest with HTML coverage report (uploaded as artifact), fails if coverage < 80%
+5. `bandit` - security scanning for Python code vulnerabilities
+6. `pip-audit` - dependency vulnerability scanning
+7. `version-check` - ensures version consistency between `pyproject.toml` and `uv.lock`
 
 **Note**: CI uses custom composite actions in `.github/actions/` for environment setup:
 
