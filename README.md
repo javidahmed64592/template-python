@@ -13,6 +13,7 @@ This repository can be used as a template for a Python application.
 - [uv](#uv)
 - [Installing Dependencies](#installing-dependencies)
 - [Testing, Linting, and Type Checking](#testing-linting-and-type-checking)
+- [License](#license)
 
 ## uv
 This repository is managed using the `uv` Python project manager: https://docs.astral.sh/uv/
@@ -46,3 +47,7 @@ After installing dev dependencies, set up pre-commit hooks:
 - **Run tests:** `uv run pytest`
 - **Security scan:** `uv run bandit -r example/`
 - **Audit dependencies:** `uv run pip-audit`
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
