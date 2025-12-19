@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a template Python repository demonstrating modern Python tooling with `uv`, `ruff`, `mypy`, and `pytest`. The project uses Python 3.13+ and follows strict type checking and linting standards.
+This is a template Python repository demonstrating modern Python tooling with `uv`, `ruff`, `mypy`, and `pytest`. The project uses Python 3.13+ and follows strict type checking and linting standards. It includes an example package with a console entry point, build configuration using hatchling, and comprehensive CI/CD pipelines.
 
 ## Package Management with uv
 
@@ -25,7 +25,7 @@ This is a template Python repository demonstrating modern Python tooling with `u
 
 ### Type Checking (mypy)
 
-- Strict configuration: `disallow_incomplete_defs`, `check_untyped_defs`, `warn_return_any`
+- Strict configuration: `disallow_incomplete_defs`, `check_untyped_defs`, `warn_return_any`, `warn_redundant_casts`, `warn_unused_ignores`, `warn_unreachable`
 - NumPy imports ignore missing type stubs via `[[tool.mypy.overrides]]`
 - **All functions require type annotations** - never omit return types or parameter types
 
@@ -82,6 +82,16 @@ The CI runs 7 jobs in parallel:
 - `setup-python-dev` - installs Python + uv + dev dependencies
 - `setup-python-core` - installs Python + uv + core dependencies only
 
+## Build Pipeline (.github/workflows/build.yml)
+
+The Build workflow runs on pushes and pull requests to the `main` branch.
+It consists of the following jobs:
+
+1. `build_wheel` - builds the wheel using `uv build`, inspects contents, and uploads as artifact
+2. `verify_structure` - downloads the wheel, installs it, and verifies the installed package structure
+
+**Note**: Uses hatchling as the build backend, configured in `pyproject.toml` under `[tool.hatch.build]`
+
 ## Code Style Patterns
 
 ### Module Documentation
@@ -115,11 +125,14 @@ def test_example_function() -> None:
 
 ## Project Structure
 
+- `.github/` - GitHub workflows and actions
+- `docs/` - documentation files
 - `example/` - main package code
 - `tests/` - pytest test files
+- `.pre-commit-config.yaml` - pre-commit hook configuration
+- `.python-version` - Python version specification for `uv` and CI
 - `pyproject.toml` - single source of truth for all configuration (build, dependencies, tooling)
 - `uv.lock` - locked dependency versions
-- `.python-version` - Python version specification for `uv` and CI
 
 ## Version Management
 

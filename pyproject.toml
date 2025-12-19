@@ -23,24 +23,30 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "bandit",
-    "mypy",
-    "pip-audit",
-    "pre-commit",
-    "pytest",
-    "pytest-cov",
-    "ruff",
-    "validate-pyproject",
+    "bandit>=1.9.2",
+    "mypy>=1.19.1",
+    "pip-audit>=2.10.0",
+    "pre-commit>=4.5.1",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "ruff>=0.14.10",
+    "validate-pyproject>=0.24.1",
 ]
 
 [project.urls]
 repository = "https://github.com/javidahmed64592/template-python"
 
+[project.scripts]
+example-entrypoint = "example.main:example_function"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
 [tool.hatch.build]
 include = [
   "example/**",
-  "README.md",
   "LICENSE",
+  "README.md",
 ]
 
 [tool.pytest.ini_options]
@@ -54,10 +60,6 @@ addopts = [
 [tool.coverage.run]
 branch = true
 source = ["example"]
-omit = [
-    "tests/*",
-    "*/__init__.py",
-]
 
 [tool.coverage.report]
 fail_under = 80
