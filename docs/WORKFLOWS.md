@@ -33,7 +33,7 @@ It consists of the following jobs:
 ### bandit
 - Checkout code
 - Setup Python environment with dev dependencies (via custom action)
-- Run security scanning with bandit
+- Run security scanning with bandit on `example/` directory
 - Generate JSON report for artifacts
 - Fail if security vulnerabilities are found
 
@@ -52,17 +52,17 @@ It consists of the following jobs:
 The Build workflow runs on pushes and pull requests to the `main` branch.
 It consists of the following jobs:
 
-### build_wheel
+### build-wheel
 - Checkout code
 - Setup Python environment with dev dependencies (via custom action)
 - Build wheel with `uv build`
 - Inspect wheel contents for verification
 - Upload wheel artifact (`example_wheel`)
 
-### verify_structure
-- Depends on `build_wheel` job
+### verify-structure
+- Depends on `build-wheel` job
 - Checkout code
 - Setup Python environment (via custom action)
 - Download wheel artifact
 - Install wheel using `uv pip install`
-- Verify installed package structure
+- Verify installed package structure in site-packages
