@@ -59,7 +59,7 @@ addopts = [
 
 [tool.coverage.run]
 branch = true
-source = ["example"]
+source = ["example", "tests"]
 
 [tool.coverage.report]
 fail_under = 80
