@@ -13,7 +13,6 @@ This repository can be used as a template for a Python application.
 - [Documentation](#documentation)
 - [License](#license)
 
-
 ## Documentation
 
 - **[Software Maintenance Guide](./docs/SMG.md)**: Development setup, configuration
