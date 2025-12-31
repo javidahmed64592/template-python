@@ -1,6 +1,6 @@
-"""Unit tests for the example.main module."""
+"""Unit tests for the template_python.main module."""
 
-from example.main import example_function
+from template_python.main import example_function
 
 
 def test_example_function() -> None:

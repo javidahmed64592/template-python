@@ -43,7 +43,7 @@ This is a template Python repository demonstrating modern Python tooling with `u
 - **bandit** - scans Python code for security vulnerabilities
 - **pip-audit** - audits dependencies for known security issues
 - Both run automatically in CI pipeline
-- Run locally: `uv run bandit -r example/` and `uv run pip-audit`
+- Run locally: `uv run bandit -r template_python/` and `uv run pip-audit`
 
 ## Development Workflow
 
@@ -127,7 +127,7 @@ def test_example_function() -> None:
 
 - `.github/` - GitHub workflows and actions
 - `docs/` - documentation files
-- `example/` - main package code
+- `template_python/` - main package code
 - `tests/` - pytest test files
 - `.pre-commit-config.yaml` - pre-commit hook configuration
 - `.python-version` - Python version specification for `uv` and CI
@@ -138,4 +138,4 @@ def test_example_function() -> None:
 
 - Package version defined in `pyproject.toml` under `[project]` → `version`
 - CI validates version consistency across `pyproject.toml` and `uv.lock`
-- Update package name in CI's version-check job if renaming from "example"
+- Update package name in CI's version-check job if renaming from "template_python"
