@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "example"
+name = "template-python"
 version = "0.1.0"
 description = "An example pyproject.toml."
 readme = "README.md"
@@ -35,14 +35,14 @@ dev = [
 repository = "https://github.com/javidahmed64592/template-python"
 
 [project.scripts]
-example-entrypoint = "example.main:example_function"
+example-entrypoint = "template_python.main:example_function"
 
 [tool.hatch.metadata]
 allow-direct-references = true
 
 [tool.hatch.build]
 include = [
-  "example/**",
+  "template_python/**",
   "LICENSE",
   "README.md",
 ]
@@ -57,7 +57,7 @@ addopts = [
 
 [tool.coverage.run]
 branch = true
-source = ["example", "tests"]
+source = ["template_python", "tests"]
 
 [tool.coverage.report]
 fail_under = 80

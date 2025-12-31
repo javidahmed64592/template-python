@@ -19,7 +19,7 @@ This document outlines how to configure and setup a development environment to w
 ### Directory Structure
 
 ```
-example/
+template_python/
 └── main.py # Replace with your application
 ```
 
@@ -58,5 +58,5 @@ uv run pre-commit install
 - **Format code:** `uv run ruff format .`
 - **Type check:** `uv run mypy .`
 - **Run tests:** `uv run pytest`
-- **Security scan:** `uv run bandit -r example/`
+- **Security scan:** `uv run bandit -r template_python/`
 - **Audit dependencies:** `uv run pip-audit`

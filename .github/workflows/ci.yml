@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  PACKAGE_NAME: example
+  PACKAGE_NAME: template_python
 
 jobs:
   validate-pyproject:

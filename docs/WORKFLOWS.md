@@ -57,7 +57,7 @@ It consists of the following jobs:
 - Setup Python environment with dev dependencies (via custom action)
 - Build wheel with `uv build`
 - Inspect wheel contents for verification
-- Upload wheel artifact (`example_wheel`)
+- Upload wheel artifact (`template_python_wheel`)
 
 ### verify-structure
 - Depends on `build-wheel` job
