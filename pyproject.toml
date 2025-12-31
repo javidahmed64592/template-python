@@ -17,9 +17,7 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
 ]
-dependencies = [
-    "numpy",
-]
+dependencies = []
 
 [project.optional-dependencies]
 dev = [
