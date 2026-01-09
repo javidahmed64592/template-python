@@ -27,12 +27,6 @@ template_python/
 
 This repository is managed using the `uv` Python project manager: https://docs.astral.sh/uv/
 
-To install `uv`:
-
-```sh
-powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex" # Windows
-```
-
 Install the required dependencies:
 
 ```sh
