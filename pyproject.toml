@@ -27,7 +27,7 @@ dev = [
     "pre-commit>=4.5.1",
     "pytest>=9.0.2",
     "pytest-cov>=7.0.0",
-    "ruff>=0.14.13",
+    "ruff>=0.14.14",
     "validate-pyproject>=0.24.1",
 ]
 
@@ -43,8 +43,6 @@ allow-direct-references = true
 [tool.hatch.build]
 include = [
   "template_python/**",
-  "LICENSE",
-  "README.md",
 ]
 
 [tool.pytest.ini_options]
@@ -165,7 +163,5 @@ warn_unreachable = true
 pretty = true
 
 [[tool.mypy.overrides]]
-module = [
-    "numpy.*",
-]
+module = []
 ignore_missing_imports = true
