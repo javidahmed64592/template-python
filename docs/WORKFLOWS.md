@@ -33,7 +33,7 @@ It consists of the following jobs:
 ### bandit
 - Checkout code
 - Setup Python environment with dev dependencies (via custom action)
-- Run security scanning with bandit on `example/` directory
+- Run security scanning with bandit
 - Generate JSON report for artifacts
 - Fail if security vulnerabilities are found
 
@@ -57,7 +57,7 @@ It consists of the following jobs:
 - Setup Python environment with dev dependencies (via custom action)
 - Build wheel with `uv build`
 - Inspect wheel contents for verification
-- Upload wheel artifact (`template_python_wheel`)
+- Upload wheel artifact
 
 ### verify-structure
 - Depends on `build-wheel` job
