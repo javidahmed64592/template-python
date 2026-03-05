@@ -15,16 +15,14 @@ runs:
 
       - name: Check version consistency
         run: |
-          echo "Checking version consistency across all package files..."
-
           # Get reference version from pyproject.toml
-          REFERENCE_VERSION=$(uv run python -c "import tomllib; print(tomllib.load(open('pyproject.toml', 'rb'))['project']['version'])")
+          REFERENCE_VERSION=$(uv run ci-version-pyproject)
           echo "Reference version (pyproject.toml): $REFERENCE_VERSION"
 
           MISMATCH=false
 
           # Check uv.lock
-          LOCK_VERSION=$(uv run python -c "import tomllib; lock_data = tomllib.load(open('uv.lock', 'rb')); pkg = next((p for p in lock_data['package'] if p['name'] == '$(echo ${{ env.PACKAGE_NAME }} | tr '_' '-')'), None); print(pkg['version'] if pkg else 'not found')")
+          LOCK_VERSION=$(uv run ci-version-uv-lock)
           if [ "$LOCK_VERSION" != "$REFERENCE_VERSION" ]; then
             echo "❌ uv.lock: $LOCK_VERSION (expected $REFERENCE_VERSION)"
             MISMATCH=true

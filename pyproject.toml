@@ -17,7 +17,9 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "License :: OSI Approved :: MIT License",
 ]
-dependencies = []
+dependencies = [
+    "pyhere>=1.0.3",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -35,6 +37,8 @@ dev = [
 repository = "https://github.com/javidahmed64592/template-python"
 
 [project.scripts]
+ci-version-pyproject = "template_python.workflows:get_version_pyproject"
+ci-version-uv-lock = "template_python.workflows:get_version_uv_lock"
 example-entrypoint = "template_python.main:example_function"
 
 [tool.hatch.metadata]
