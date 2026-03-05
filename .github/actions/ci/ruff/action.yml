@@ -1,0 +1,13 @@
+name: Run CI job - Ruff
+description: Run Ruff linting checks on the codebase.
+
+runs:
+  using: composite
+  steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup/install-python-dev
+
+      - name: Check with ruff
+        run: |
+          uv run -m ruff check
+        shell: bash

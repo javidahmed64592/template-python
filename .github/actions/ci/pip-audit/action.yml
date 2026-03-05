@@ -1,0 +1,13 @@
+name: Run CI job - Pip Audit
+description: Run pip-audit to check for known vulnerabilities in dependencies.
+
+runs:
+  using: composite
+  steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup/install-python-dev
+
+      - name: Audit dependencies
+        run: |
+          uv run pip-audit --desc
+        shell: bash
