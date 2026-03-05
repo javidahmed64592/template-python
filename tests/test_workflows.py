@@ -43,13 +43,12 @@ class TestWorkflows:
 
     def test_get_version_uv_lock_not_found(self) -> None:
         """Test getting the version from uv.lock when the package is not found."""
-        mock_uv_lock = {"package": []}
         pyproject = _load_pyproject()
 
         _get_version_uv_lock.cache_clear()
 
         with (
-            patch("template_python.workflows._load_uv_lock", return_value=mock_uv_lock),
+            patch("template_python.workflows._load_uv_lock", return_value={"package": []}),
             pytest.raises(ValueError, match=rf"Package '{pyproject['project']['name']}' not found in uv.lock"),
         ):
             _get_version_uv_lock()

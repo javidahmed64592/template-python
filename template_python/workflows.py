@@ -24,7 +24,7 @@ def _load_uv_lock() -> dict:
 def _get_version_pyproject() -> str:
     """Get the version from pyproject.toml."""
     pyproject = _load_pyproject()
-    return pyproject["project"]["version"]
+    return str(pyproject["project"]["version"])
 
 
 @cache
@@ -33,7 +33,7 @@ def _get_version_uv_lock() -> str:
     pyproject = _load_pyproject()
     uv_lock = _load_uv_lock()
     if pkg := next((p for p in uv_lock["package"] if p["name"] == pyproject["project"]["name"]), None):
-        return pkg["version"]
+        return str(pkg["version"])
 
     error_msg = f"Package '{pyproject['project']['name']}' not found in uv.lock"
     raise ValueError(error_msg)
