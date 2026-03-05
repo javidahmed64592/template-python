@@ -38,6 +38,7 @@ repository = "https://github.com/javidahmed64592/template-python"
 
 [project.scripts]
 ci-pyproject-version = "template_python.workflows:print_version_pyproject"
+ci-pyproject-name = "template_python.workflows:print_name_pyproject"
 ci-uv-lock-version = "template_python.workflows:print_version_uv_lock"
 example-entrypoint = "template_python.main:example_function"
 
