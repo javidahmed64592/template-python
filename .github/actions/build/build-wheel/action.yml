@@ -4,8 +4,8 @@ description: Build Python wheel package and upload as artifact.
 runs:
   using: composite
   steps:
-      - uses: actions/checkout@v4
-      - uses: javidahmed64592/template-python/.github/actions/setup/install-python-core@main
+      - uses: actions/checkout@v6
+      - uses: ./.github/actions/setup/install-python-core@main
 
       - name: Create wheel
         run: |
@@ -19,7 +19,7 @@ runs:
         shell: bash
 
       - name: Upload wheel
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ env.PACKAGE_NAME }}_wheel
           path: dist/${{ env.PACKAGE_NAME }}-*-py3-none-any.whl

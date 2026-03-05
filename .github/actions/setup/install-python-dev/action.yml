@@ -4,8 +4,8 @@ description: Installs dev Python dependencies from pyproject.toml using uv.
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v4
-    - uses: javidahmed64592/template-python/.github/actions/setup/setup-uv-python@main
+    - uses: actions/checkout@v6
+    - uses: ./.github/actions/setup/setup-uv-python@main
 
     - name: Install dependencies
       run: |

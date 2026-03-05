@@ -24,7 +24,7 @@ The following actions can be referenced from other repositories using `javidahme
 - Location: `setup-uv-python/action.yml`
 - Steps:
   - Installs uv using `astral-sh/setup-uv@v7` with caching enabled
-  - Sets up Python using the version specified in `.python-version`
+  - Sets up Python using `actions/setup-python@v6` and the version specified in `.python-version`
   - Caches dependencies based on `uv.lock` for faster builds
 
 Usage:
