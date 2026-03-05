@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/install-python-dev
+      - uses: ./.github/actions/setup/install-python-dev
       - name: Validate pyproject.toml
         run: |
           uv run validate-pyproject pyproject.toml
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/install-python-dev
+      - uses: ./.github/actions/setup/install-python-dev
       - name: Check with ruff
         run: |
           uv run -m ruff check
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/install-python-dev
+      - uses: ./.github/actions/setup/install-python-dev
       - name: Check with mypy
         run: |
           uv run -m mypy .
@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/install-python-dev
+      - uses: ./.github/actions/setup/install-python-dev
       - name: Test with pytest
         run: |
           uv run -m pytest --cov-report html --cov-report term
@@ -53,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/install-python-dev
+      - uses: ./.github/actions/setup/install-python-dev
       - name: Security check
         run: |
           uv run bandit -r ${{ env.PACKAGE_NAME }} -f json -o bandit-report.json || true
@@ -65,7 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/install-python-dev
+      - uses: ./.github/actions/setup/install-python-dev
       - name: Audit dependencies
         run: |
           uv run pip-audit --desc
@@ -73,7 +73,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/install-python-dev
+      - uses: ./.github/actions/setup/install-python-dev
       - name: Check version consistency
         run: |
           echo "Checking version consistency across all package files..."
