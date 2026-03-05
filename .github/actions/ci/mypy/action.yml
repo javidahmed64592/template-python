@@ -1,0 +1,13 @@
+name: Run CI job - Mypy
+description: Run Mypy type checking on the codebase.
+
+runs:
+  using: composite
+  steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup/install-python-dev
+
+      - name: Check with mypy
+        run: |
+          uv run -m mypy .
+        shell: bash
