@@ -753,7 +753,7 @@ requires-dist = [
     { name = "pyhere", specifier = ">=1.0.3" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=9.0.2" },
     { name = "pytest-cov", marker = "extra == 'dev'", specifier = ">=7.0.0" },
-    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.15.4" },
+    { name = "ruff", marker = "extra == 'dev'", specifier = ">=0.15.5" },
     { name = "validate-pyproject", marker = "extra == 'dev'", specifier = ">=0.25.0" },
 ]
 provides-extras = ["dev"]
