@@ -6,9 +6,9 @@ runs:
   steps:
     - uses: actions/checkout@v6
     - uses: ./.github/actions/setup/setup-uv-python
-      if: github.repository == 'javidahmed64592/template-python'
+      if: ${{ github.repository == 'javidahmed64592/template-python' }}
     - uses: javidahmed64592/template-python/.github/actions/setup/setup-uv-python@main
-      if: github.repository != 'javidahmed64592/template-python'
+      if: ${{ github.repository != 'javidahmed64592/template-python' }}
 
     - name: Install dependencies
       run: |
