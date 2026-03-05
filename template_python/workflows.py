@@ -1,31 +1,49 @@
 """Utility script for GitHub workflows."""
 
 import tomllib
+from functools import cache
 
 from pyhere import here
 
 
+@cache
 def _load_pyproject() -> dict:
     """Load the pyproject.toml file."""
     with here("pyproject.toml").open("rb") as f:
         return tomllib.load(f)
 
 
+@cache
 def _load_uv_lock() -> dict:
     """Load the uv.lock file."""
     with here("uv.lock").open("rb") as f:
         return tomllib.load(f)
 
 
-def get_version_pyproject() -> None:
+@cache
+def _get_version_pyproject() -> str:
     """Get the version from pyproject.toml."""
     pyproject = _load_pyproject()
-    print(pyproject["project"]["version"])
+    return pyproject["project"]["version"]
 
 
-def get_version_uv_lock() -> None:
+@cache
+def _get_version_uv_lock() -> str:
     """Get the version from uv.lock."""
     pyproject = _load_pyproject()
     uv_lock = _load_uv_lock()
-    pkg = next((p for p in uv_lock["package"] if p["name"] == pyproject["project"]["name"]), None)
-    print(pkg["version"] if pkg else "not found")
+    if pkg := next((p for p in uv_lock["package"] if p["name"] == pyproject["project"]["name"]), None):
+        return pkg["version"]
+
+    error_msg = f"Package '{pyproject['project']['name']}' not found in uv.lock"
+    raise ValueError(error_msg)
+
+
+def print_version_pyproject() -> None:
+    """Get the version from pyproject.toml."""
+    print(_get_version_pyproject())
+
+
+def print_version_uv_lock() -> None:
+    """Get the version from uv.lock."""
+    print(_get_version_uv_lock())
