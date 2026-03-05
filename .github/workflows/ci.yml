@@ -16,40 +16,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: ./.github/actions/ci/validate-pyproject@main
+      - uses: ./.github/actions/ci/validate-pyproject
 
   ruff:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: ./.github/actions/ci/ruff@main
+      - uses: ./.github/actions/ci/ruff
 
   mypy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: ./.github/actions/ci/mypy@main
+      - uses: ./.github/actions/ci/mypy
 
   pytest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: ./.github/actions/ci/pytest@main
+      - uses: ./.github/actions/ci/pytest
 
   bandit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: ./.github/actions/ci/bandit@main
+      - uses: ./.github/actions/ci/bandit
 
   pip-audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: ./.github/actions/ci/pip-audit@main
+      - uses: ./.github/actions/ci/pip-audit
 
   version-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: ./.github/actions/ci/version-check@main
+      - uses: ./.github/actions/ci/version-check
