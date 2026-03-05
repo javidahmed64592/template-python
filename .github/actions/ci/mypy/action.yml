@@ -6,6 +6,9 @@ runs:
   steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup/install-python-dev
+        if: ${{ github.repository == 'javidahmed64592/template-python' }}
+      - uses: javidahmed64592/template-python/.github/actions/setup/install-python-dev@main
+        if: ${{ github.repository != 'javidahmed64592/template-python' }}
 
       - name: Check with mypy
         run: |
