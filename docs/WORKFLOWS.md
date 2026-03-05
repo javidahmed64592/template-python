@@ -56,7 +56,6 @@ steps:
 - Steps:
   - Uses the `setup-uv-python` action
   - Runs `uv sync --extra dev` to install core and dev dependencies
-- Note: Requires `pyproject.toml` with dev dependencies defined under `[project.optional-dependencies]`.
 
 Usage:
 ```yaml
@@ -89,7 +88,6 @@ steps:
 - Steps:
   - Uses the `install-python-dev` action
   - Runs `uv run -m ruff check` to lint the code
-- Note: Requires Ruff configuration in `pyproject.toml` under `[tool.ruff]`.
 
 Usage:
 ```yaml
@@ -105,7 +103,6 @@ steps:
 - Steps:
   - Uses the `install-python-dev` action
   - Runs `uv run -m mypy .` to perform static type checking
-- Note: Requires Mypy configuration in `pyproject.toml` under `[tool.mypy]`.
 
 Usage:
 ```yaml
@@ -123,7 +120,6 @@ steps:
   - Runs `uv run -m pytest --cov-report html --cov-report term` to execute tests with coverage
   - Uploads HTML coverage report as artifact named `backend-coverage-report`
   - Fails if coverage drops below the threshold configured in `pyproject.toml`
-- Note: Requires pytest and pytest-cov configuration in `pyproject.toml` under `[tool.pytest.ini_options]` and `[tool.coverage]`.
 
 Usage:
 ```yaml
@@ -140,7 +136,6 @@ steps:
   - Uses the `install-python-dev` action
   - Runs `uv run bandit -r $PACKAGE_NAME -f json -o bandit-report.json` to scan for security vulnerabilities
   - Uploads JSON report as artifact named `bandit-report`
-- Note: Requires `PACKAGE_NAME` environment variable to be set at the workflow or job level.
 
 Usage:
 ```yaml
@@ -203,7 +198,6 @@ steps:
   - Runs `uv build` to create the wheel
   - Inspects wheel contents using `unzip -l`
   - Uploads wheel as artifact with name `{PACKAGE_NAME}_wheel`
-- Note: Requires `PACKAGE_NAME` environment variable and build configuration in `pyproject.toml` under `[build-system]`.
 
 Usage:
 ```yaml
@@ -224,7 +218,6 @@ steps:
   - Installs the wheel using `uv pip install`
   - Verifies that the package directory exists in site-packages
   - Fails if required package structure is missing
-- Note: Requires `PACKAGE_NAME` environment variable. Should run after `build-wheel` action using `needs: build-wheel` at the job level.
 
 Usage:
 ```yaml

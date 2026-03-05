@@ -16,40 +16,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/ci/validate-pyproject
+      - uses: javidahmed64592/template-python/.github/actions/ci/validate-pyproject@main
 
   ruff:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/ci/ruff
+      - uses: javidahmed64592/template-python/.github/actions/ci/ruff@main
 
   mypy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/ci/mypy
+      - uses: javidahmed64592/template-python/.github/actions/ci/mypy@main
 
   pytest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/ci/pytest
+      - uses: javidahmed64592/template-python/.github/actions/ci/pytest@main
 
   bandit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/ci/bandit
+      - uses: javidahmed64592/template-python/.github/actions/ci/bandit@main
 
   pip-audit:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/ci/pip-audit
+      - uses: javidahmed64592/template-python/.github/actions/ci/pip-audit@main
 
   version-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/ci/version-check
+      - uses: javidahmed64592/template-python/.github/actions/ci/version-check@main
