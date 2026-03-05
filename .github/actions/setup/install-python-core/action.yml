@@ -1,5 +1,5 @@
-name: Install core Python dependencies
-description: Installs core Python dependencies from pyproject.toml using uv
+name: Install Core Python Dependencies
+description: Installs core Python dependencies from pyproject.toml using uv.
 
 runs:
   using: composite

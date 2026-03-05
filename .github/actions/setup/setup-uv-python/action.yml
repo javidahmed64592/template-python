@@ -1,5 +1,5 @@
-name: Setup Python with uv
-description: Sets up Python with uv
+name: Setup uv + Python
+description: Sets up Python with uv.
 
 runs:
   using: composite
