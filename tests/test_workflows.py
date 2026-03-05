@@ -5,10 +5,12 @@ from unittest.mock import patch
 import pytest
 
 from template_python.workflows import (
+    _get_name_pyproject,
     _get_version_pyproject,
     _get_version_uv_lock,
     _load_pyproject,
     _load_uv_lock,
+    print_name_pyproject,
     print_version_pyproject,
     print_version_uv_lock,
 )
@@ -26,15 +28,20 @@ class TestWorkflows:
 
     def test_load_uv_lock(self) -> None:
         """Test loading the uv.lock file."""
-        pyproject = _load_pyproject()
+        name = _get_name_pyproject()
         uv_lock = _load_uv_lock()
         assert "package" in uv_lock
-        assert any(p["name"] == pyproject["project"]["name"] for p in uv_lock["package"])
+        assert any(p["name"] == name for p in uv_lock["package"])
 
     def test_get_version_pyproject(self) -> None:
         """Test getting the version from pyproject.toml."""
         version = _get_version_pyproject()
         assert isinstance(version, str)
+
+    def test_get_name_pyproject(self) -> None:
+        """Test getting the name from pyproject.toml."""
+        name = _get_name_pyproject()
+        assert isinstance(name, str)
 
     def test_get_version_uv_lock(self) -> None:
         """Test getting the version from uv.lock."""
@@ -56,6 +63,10 @@ class TestWorkflows:
     def test_print_version_pyproject(self) -> None:
         """Test printing the version from pyproject.toml."""
         print_version_pyproject()
+
+    def test_print_name_pyproject(self) -> None:
+        """Test printing the name from pyproject.toml."""
+        print_name_pyproject()
 
     def test_print_version_uv_lock(self) -> None:
         """Test printing the version from uv.lock."""

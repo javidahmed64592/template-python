@@ -16,13 +16,13 @@ runs:
       - name: Check version consistency
         run: |
           # Get reference version from pyproject.toml
-          REFERENCE_VERSION=$(uv run ci-version-pyproject)
+          REFERENCE_VERSION=$(uv run ci-pyproject-version)
           echo "Reference version (pyproject.toml): $REFERENCE_VERSION"
 
           MISMATCH=false
 
           # Check uv.lock
-          LOCK_VERSION=$(uv run ci-version-uv-lock)
+          LOCK_VERSION=$(uv run ci-uv-lock-version)
           if [ "$LOCK_VERSION" != "$REFERENCE_VERSION" ]; then
             echo "❌ uv.lock: $LOCK_VERSION (expected $REFERENCE_VERSION)"
             MISMATCH=true

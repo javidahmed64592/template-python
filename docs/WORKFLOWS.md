@@ -167,8 +167,8 @@ steps:
 - Location: `version-check/action.yml`
 - Steps:
   - Uses the `install-python-dev` action
-  - Extracts version from `pyproject.toml` using `uv run ci-version-pyproject`
-  - Verifies `uv.lock` version matches using `uv run ci-version-uv-lock`
+  - Extracts version from `pyproject.toml` using `uv run ci-pyproject-version`
+  - Verifies `uv.lock` version matches using `uv run ci-uv-lock-version`
   - Optionally checks additional version files via `additional-versions` input
   - Fails if any version mismatch is detected
 
