@@ -1,0 +1,13 @@
+name: Setup Python with uv
+description: Sets up Python with uv
+
+runs:
+  using: composite
+  steps:
+    - name: Install uv
+      uses: astral-sh/setup-uv@v7
+      with:
+        enable-cache: true
+        cache-dependency-glob: "uv.lock"
+    - name: "Set up Python"
+      uses: actions/setup-python@v6

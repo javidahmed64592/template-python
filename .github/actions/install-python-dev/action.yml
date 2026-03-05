@@ -1,0 +1,13 @@
+name: Install dev Python dependencies
+description: Installs dev Python dependencies from pyproject.toml using uv
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v4
+    - uses: ./.github/actions/setup-uv-python
+
+    - name: Install dependencies
+      run: |
+        uv sync --extra dev
+      shell: bash
