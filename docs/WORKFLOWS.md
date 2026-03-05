@@ -176,7 +176,6 @@ steps:
   - Verifies `uv.lock` version matches using `uv run ci-version-uv-lock`
   - Optionally checks additional version files via `additional-versions` input
   - Fails if any version mismatch is detected
-- Note: Requires `ci-version-pyproject` and `ci-version-uv-lock` scripts defined in `pyproject.toml` under `[project.scripts]`.
 
 Usage:
 ```yaml
