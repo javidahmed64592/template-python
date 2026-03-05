@@ -5,7 +5,7 @@ runs:
   using: composite
   steps:
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup-uv-python
+    - uses: ./.github/actions/setup/setup-uv-python
 
     - name: Install dependencies
       run: |
