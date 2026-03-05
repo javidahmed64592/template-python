@@ -5,7 +5,7 @@ runs:
   using: composite
   steps:
       - uses: actions/checkout@v6
-      - uses: javidahmed64592/template-python/.github/actions/setup/install-python-core@main
+      - uses: ./.github/actions/setup/install-python-core@main
 
       - name: Create wheel
         run: |

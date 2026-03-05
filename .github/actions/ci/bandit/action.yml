@@ -5,7 +5,7 @@ runs:
   using: composite
   steps:
       - uses: actions/checkout@v6
-      - uses: javidahmed64592/template-python/.github/actions/setup/install-python-dev@main
+      - uses: ./.github/actions/setup/install-python-dev@main
 
       - name: Security check
         run: |
