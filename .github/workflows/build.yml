@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-python-core
+      - uses: ./.github/actions/install-python-core
       - name: Create wheel
         run: |
           uv build
@@ -35,7 +35,7 @@ jobs:
     needs: build-wheel
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup-python-core
+      - uses: ./.github/actions/install-python-core
 
       - name: Download wheel artifact
         uses: actions/download-artifact@v4
