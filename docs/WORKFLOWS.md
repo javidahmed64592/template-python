@@ -65,6 +65,21 @@ steps:
 
 ---
 
+**set-package-name:**
+- Description: Sets the `PACKAGE_NAME` environment variable by replacing hyphens with underscores in the repository name.
+- Location: `set-package-name/action.yml`
+- Steps:
+  - Derives `PACKAGE_NAME` from `github.event.repository.name` using bash parameter expansion (`${REPO_NAME//-/_}`)
+  - Writes the result to `$GITHUB_ENV` so it is available to all subsequent steps
+
+Usage:
+```yaml
+steps:
+  - uses: javidahmed64592/template-python/.github/actions/setup/set-package-name@main
+```
+
+---
+
 ### CI Actions (`/ci/**/action.yml`)
 
 **validate-pyproject:**
@@ -139,9 +154,8 @@ steps:
 
 Usage:
 ```yaml
-env:
-  PACKAGE_NAME: your_package_name
 steps:
+  - uses: javidahmed64592/template-python/.github/actions/setup/set-package-name@main
   - uses: javidahmed64592/template-python/.github/actions/ci/bandit@main
 ```
 
@@ -201,9 +215,8 @@ steps:
 
 Usage:
 ```yaml
-env:
-  PACKAGE_NAME: your_package_name
 steps:
+  - uses: javidahmed64592/template-python/.github/actions/setup/set-package-name@main
   - uses: javidahmed64592/template-python/.github/actions/build/build-wheel@main
 ```
 
@@ -221,9 +234,8 @@ steps:
 
 Usage:
 ```yaml
-env:
-  PACKAGE_NAME: your_package_name
 steps:
+  - uses: javidahmed64592/template-python/.github/actions/setup/set-package-name@main
   - uses: javidahmed64592/template-python/.github/actions/build/verify-structure@main
 ```
 
