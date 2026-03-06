@@ -1,0 +1,11 @@
+name: Set Package Name
+description: Sets the PACKAGE_NAME environment variable by replacing hyphens with underscores in the repository name.
+
+runs:
+  using: composite
+  steps:
+    - name: Set package name
+      run: |
+        REPO_NAME="${{ github.event.repository.name }}"
+        echo "PACKAGE_NAME=${REPO_NAME//-/_}" >> $GITHUB_ENV
+      shell: bash
