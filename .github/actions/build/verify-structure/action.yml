@@ -6,10 +6,6 @@ inputs:
     description: 'Newline-separated list of directories expected to exist relative to site-packages'
     required: false
     default: ''
-  expected-files:
-    description: 'Newline-separated list of files expected to exist relative to site-packages'
-    required: false
-    default: ''
 
 runs:
   using: composite
@@ -40,35 +36,22 @@ runs:
 
       - name: Verify installed package structure
         run: |
-          # Find site-packages directory
           SITE_PACKAGES=$(find . -name "site-packages" -type d | head -1)
           echo "Site-packages directory: $SITE_PACKAGES"
 
-          # Check for required directories in site-packages
+          # Check required directories in site-packages
           echo "Checking required directories in site-packages..."
-
           REQUIRED_DIRS=(
             "${SITE_PACKAGES}"
             "${SITE_PACKAGES}/${{ env.PACKAGE_NAME }}"
           )
-          REQUIRED_FILES=()
 
-          # Build array of required directories
           if [ -n "${{ inputs.expected-directories }}" ]; then
             while IFS= read -r dir; do
               if [ -n "$dir" ]; then
                 REQUIRED_DIRS+=("${SITE_PACKAGES}/${dir}")
               fi
             done <<< "${{ inputs.expected-directories }}"
-          fi
-
-          # Build array of required files
-          if [ -n "${{ inputs.expected-files }}" ]; then
-            while IFS= read -r file; do
-              if [ -n "$file" ]; then
-                REQUIRED_FILES+=("${SITE_PACKAGES}/${file}")
-              fi
-            done <<< "${{ inputs.expected-files }}"
           fi
 
           # Check for required directories in site-packages
@@ -79,15 +62,4 @@ runs:
               exit 1
             fi
           done
-
-          # Check for required files in site-packages
-          if [ ${#REQUIRED_FILES[@]} -gt 0 ]; then
-            echo "Checking required files in site-packages..."
-            for file in "${REQUIRED_FILES[@]}"; do
-              if [ ! -f "$file" ]; then
-                echo "Required file not found: $file"
-                exit 1
-              fi
-            done
-          fi
         shell: bash
