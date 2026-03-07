@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+
       - uses: ./.github/actions/build/build-wheel
         if: github.event.repository.name == 'template-python'
       - uses: javidahmed64592/template-python/.github/actions/build/build-wheel@main
@@ -23,6 +24,7 @@ jobs:
     needs: build-wheel
     steps:
       - uses: actions/checkout@v6
+
       - uses: ./.github/actions/build/verify-structure
         if: github.event.repository.name == 'template-python'
       - uses: javidahmed64592/template-python/.github/actions/build/verify-structure@main
