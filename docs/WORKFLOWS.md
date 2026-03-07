@@ -213,8 +213,8 @@ steps:
   - Downloads the wheel artifact (named `{PACKAGE_NAME}_wheel`)
   - Installs the wheel using `uv pip install`
   - Verifies that `site-packages` and the package directory exist
-  - Optionally verifies additional directories and files specified in inputs
-  - Fails if any required structure is missing
+  - Optionally verifies additional directories specified in inputs
+  - Fails if any required directory is missing
 
 Usage:
 ```yaml
@@ -229,8 +229,6 @@ steps:
     with:
       expected-directories: |
         static
-      expected-files: |
-        static/index.html
 ```
 
 ## Workflows (`./github/workflows`)
