@@ -28,8 +28,8 @@ dev = [
     "pip-audit>=2.10.0",
     "pre-commit>=4.5.1",
     "pytest>=9.0.2",
-    "pytest-cov>=7.0.0",
-    "ruff>=0.15.5",
+    "pytest-cov>=7.1.0",
+    "ruff>=0.15.7",
     "validate-pyproject>=0.25.0",
 ]
 
