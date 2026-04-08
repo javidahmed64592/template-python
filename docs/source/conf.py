@@ -5,7 +5,15 @@ https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
 
 import sys
+from datetime import datetime
 from pathlib import Path
+
+from template_python.workflows import (
+    _get_author_pyproject,
+    _get_description_pyproject,
+    _get_name_pyproject,
+    _get_version_pyproject,
+)
 
 # Add the project root to sys.path for autodoc
 sys.path.insert(0, str(Path(__file__).parents[2].resolve()))
@@ -14,13 +22,11 @@ sys.path.insert(0, str(Path(__file__).parents[2].resolve()))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 # TEMPLATE NOTE: Update these values for your specific project
 
-project = "Template Python"
-copyright = "2026, Javid Ahmed"
-author = "Javid Ahmed"
-release = "0.1.0"
-
-# TEMPLATE NOTE: Update this to match your package name
-package_name = "template_python"
+project = _get_name_pyproject().replace("-", " ").title()
+copyright = f"{datetime.now().year}, {_get_author_pyproject()}"  # noqa: A001
+author = _get_author_pyproject()
+release = _get_version_pyproject()
+package_name = _get_name_pyproject().replace("-", "_")
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -93,9 +99,9 @@ html_static_path = ["_static"]
 
 # Theme options
 html_theme_options = {
-    "description": "A Python project template with modern tooling",
+    "description": _get_description_pyproject(),
     "github_user": "javidahmed64592",  # TEMPLATE NOTE: Update for your GitHub username
-    "github_repo": "template-python",  # TEMPLATE NOTE: Update for your repo name
+    "github_repo": _get_name_pyproject(),
     "github_button": True,
     "github_banner": True,
     "show_powered_by": False,

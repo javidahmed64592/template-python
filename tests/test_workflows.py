@@ -5,6 +5,8 @@ from unittest.mock import patch
 import pytest
 
 from template_python.workflows import (
+    _get_author_pyproject,
+    _get_description_pyproject,
     _get_name_pyproject,
     _get_version_pyproject,
     _get_version_uv_lock,
@@ -42,6 +44,16 @@ class TestWorkflows:
         """Test getting the name from pyproject.toml."""
         name = _get_name_pyproject()
         assert isinstance(name, str)
+
+    def test_get_description_pyproject(self) -> None:
+        """Test getting the description from pyproject.toml."""
+        description = _get_description_pyproject()
+        assert isinstance(description, str)
+
+    def test_get_author_pyproject(self) -> None:
+        """Test getting the author from pyproject.toml."""
+        author = _get_author_pyproject()
+        assert isinstance(author, str)
 
     def test_get_version_uv_lock(self) -> None:
         """Test getting the version from uv.lock."""
