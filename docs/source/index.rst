@@ -3,15 +3,30 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Template Python documentation
-=============================
+Template Python Documentation
+==============================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Welcome to the Template Python documentation! This template provides a modern
+Python project structure with comprehensive tooling for development, testing,
+and deployment.
 
+**TEMPLATE NOTE:** Update this introduction for your specific project.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: User Guide:
 
+   smg
+
+.. toctree::
+   :maxdepth: 2
+   :caption: API Reference:
+
+   api
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
