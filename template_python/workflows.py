@@ -35,6 +35,24 @@ def _get_name_pyproject() -> str:
 
 
 @cache
+def _get_description_pyproject() -> str:
+    """Get the description from pyproject.toml."""
+    pyproject = _load_pyproject()
+    return str(pyproject["project"]["description"])
+
+
+@cache
+def _get_author_pyproject() -> str:
+    """Get the author from pyproject.toml."""
+    pyproject = _load_pyproject()
+    authors = pyproject["project"]["authors"]
+    if not authors:
+        error_msg = "No authors found in pyproject.toml. Please add at least one author to the [project] section."
+        raise ValueError(error_msg)
+    return str(authors[0]["name"])
+
+
+@cache
 def _get_version_uv_lock() -> str:
     """Get the version from uv.lock."""
     name = _get_name_pyproject()
