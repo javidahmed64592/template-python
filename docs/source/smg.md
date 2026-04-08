@@ -36,7 +36,6 @@ uv sync --all-extras
 
 ### Testing, Linting, and Type Checking
 
-- **Run all pre-commit checks:** `uv run pre-commit run --all-files`
 - **Lint code:** `uv run ruff check .`
 - **Format code:** `uv run ruff format .`
 - **Type check:** `uv run mypy .`
