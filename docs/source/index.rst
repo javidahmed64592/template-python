@@ -14,7 +14,7 @@ and deployment.
 
 .. toctree::
    :maxdepth: 2
-   :caption: User Guide:
+   :caption: Software Maintenance Guide:
 
    smg
 
@@ -23,6 +23,12 @@ and deployment.
    :caption: API Reference:
 
    api
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Workflows:
+
+   workflows
 
 Indices and tables
 ==================

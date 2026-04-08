@@ -5,8 +5,6 @@ This document outlines how to configure and setup a development environment to w
 
 **TEMPLATE NOTE:** This guide is configured for the `template-python` project. Update package names and examples for your specific project.
 
-<!-- omit from toc -->
-## Table of Contents
 - [Backend (Python)](#backend-python)
   - [Installing Dependencies](#installing-dependencies)
   - [Testing, Linting, and Type Checking](#testing-linting-and-type-checking)
