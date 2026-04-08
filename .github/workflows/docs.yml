@@ -16,8 +16,8 @@ jobs:
 
       - uses: ./.github/actions/docs/build-docs
         if: github.event.repository.name == 'template-python'
-      # - uses: javidahmed64592/template-python/.github/actions/docs/build-docs@main
-      #   if: github.event.repository.name != 'template-python'
+      - uses: javidahmed64592/template-python/.github/actions/docs/build-docs@main
+        if: github.event.repository.name != 'template-python'
 
   publish-docs:
     runs-on: ubuntu-latest
@@ -32,8 +32,7 @@ jobs:
       - uses: ./.github/actions/docs/publish-docs
         if: github.event.repository.name == 'template-python'
         id: publish_local
-      # - uses: javidahmed64592/template-python/.github/actions/docs/publish-docs@main
-      - uses: ./.github/actions/docs/publish-docs
+      - uses: javidahmed64592/template-python/.github/actions/docs/publish-docs@main
         if: github.event.repository.name != 'template-python'
         id: publish_remote
       - id: publish
