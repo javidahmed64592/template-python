@@ -8,9 +8,11 @@ They run automated code quality checks to ensure code remains robust, maintainab
   - [Setup Actions (`/setup/**/action.yml`)](#setup-actions-setupactionyml)
   - [CI Actions (`/ci/**/action.yml`)](#ci-actions-ciactionyml)
   - [Build Actions (`/build/**/action.yml`)](#build-actions-buildactionyml)
+  - [Docs Actions (`/docs/**/action.yml`)](#docs-actions-docsactionyml)
 - [Workflows (`./github/workflows`)](#workflows-githubworkflows)
   - [CI Workflow (`ci.yml`)](#ci-workflow-ciyml)
   - [Build Workflow (`build.yml`)](#build-workflow-buildyml)
+  - [Docs Workflow (`docs.yml`)](#docs-workflow-docsyml)
 
 
 ## Reusable Actions (`./github/actions`)
@@ -61,6 +63,21 @@ Usage:
 ```yaml
 steps:
   - uses: javidahmed64592/template-python/.github/actions/setup/install-python-dev@main
+```
+
+---
+
+**install-python-docs:**
+- Description: Installs documentation Python dependencies from pyproject.toml using uv.
+- Location: `install-python-docs/action.yml`
+- Steps:
+  - Uses the `setup-uv-python` action
+  - Runs `uv sync --extra docs` to install core and docs dependencies
+
+Usage:
+```yaml
+steps:
+  - uses: javidahmed64592/template-python/.github/actions/setup/install-python-docs@main
 ```
 
 ---
@@ -231,6 +248,48 @@ steps:
         static
 ```
 
+---
+
+### Docs Actions (`/docs/**/action.yml`)
+
+**build-docs:**
+- Description: Build Sphinx documentation and upload as artifact.
+- Location: `build-docs/action.yml`
+- Steps:
+  - Uses the `install-python-docs` action
+  - Runs `uv run sphinx-build -M clean docs/source/ docs/build/` to clean previous builds
+  - Runs `uv run sphinx-build -M html docs/source/ docs/build/` to build HTML documentation
+  - Uploads built documentation as artifact named `documentation`
+
+Usage:
+```yaml
+steps:
+  - uses: javidahmed64592/template-python/.github/actions/docs/build-docs@main
+```
+
+---
+
+**publish-docs:**
+- Description: Deploy Sphinx documentation to GitHub Pages.
+- Location: `publish-docs/action.yml`
+- Outputs:
+  - `page_url`: URL of the deployed GitHub Pages site
+- Steps:
+  - Downloads the `documentation` artifact
+  - Uploads HTML files to GitHub Pages using `actions/upload-pages-artifact@v4`
+  - Deploys to GitHub Pages using `actions/deploy-pages@v5`
+  - Returns the deployed page URL as output
+
+Usage:
+```yaml
+steps:
+  - id: publish
+    uses: javidahmed64592/template-python/.github/actions/docs/publish-docs@main
+  - run: echo "Deployed to ${{ steps.publish.outputs.page_url }}"
+```
+
+---
+
 ## Workflows (`./github/workflows`)
 
 The following workflows ensure Python codebases are robust and thoroughly tested.
@@ -257,3 +316,15 @@ It builds and verifies the Python wheel package.
 **Jobs:**
 - `build-wheel` - Builds the wheel package and uploads as artifact
 - `verify-structure` - Downloads and verifies the wheel contents (depends on `build-wheel`)
+
+### Docs Workflow (`docs.yml`)
+
+The Docs workflow runs on pushes and pull requests to the `main` branch.
+It builds Sphinx documentation and deploys it to GitHub Pages on pushes to main.
+
+**Jobs:**
+- `build-docs` - Builds the Sphinx HTML documentation and uploads as artifact
+- `publish-docs` - Deploys documentation to GitHub Pages (only on pushes to `main`, depends on `build-docs`)
+
+**Setup Required:**
+Before the first deployment, enable GitHub Pages in repository Settings → Pages → Source → GitHub Actions.
