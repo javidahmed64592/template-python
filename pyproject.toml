@@ -32,6 +32,9 @@ dev = [
     "ruff>=0.15.9",
     "validate-pyproject>=0.25.0",
 ]
+docs = [
+    "sphinx>=9.1.0",
+]
 
 [project.urls]
 repository = "https://github.com/javidahmed64592/template-python"
