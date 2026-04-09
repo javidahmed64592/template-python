@@ -10,8 +10,6 @@ from pathlib import Path
 
 from template_python.workflows import (
     _get_author_pyproject,
-    _get_description_pyproject,
-    _get_github_user_pyproject,
     _get_name_pyproject,
     _get_version_pyproject,
 )
@@ -82,27 +80,22 @@ myst_enable_extensions = [
     "tasklist",  # Task lists [ ]
 ]
 myst_heading_anchors = 3
-
 # Intersphinx mapping to link to other projects
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
 }
 
 templates_path = ["_templates"]
-exclude_patterns: list[str] = []
+exclude_patterns: list[str] = ["*.j2"]  # Exclude Jinja2 template files
+
+# -- RST substitutions -------------------------------------------------------
+# These variables are automatically available in all RST files as |variable_name|
+
+rst_prolog = f"""
+.. |project_name| replace:: {project}
+"""
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "furo"
-
-# Theme options
-html_theme_options = {
-    "description": _get_description_pyproject(),
-    "github_user": _get_github_user_pyproject(),
-    "github_repo": _get_name_pyproject(),
-    "github_button": True,
-    "github_banner": True,
-    "show_powered_by": False,
-    "show_related": False,
-}

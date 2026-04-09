@@ -1,11 +1,9 @@
-Template Python Documentation
+|project_name| Documentation
 ==============================
 
-Welcome to the Template Python documentation! This template provides a modern
+Welcome to the |project_name| documentation! This template provides a modern
 Python project structure with comprehensive tooling for development, testing,
 and deployment.
-
-**TEMPLATE NOTE:** Update this introduction for your specific project.
 
 .. toctree::
    :maxdepth: 2
