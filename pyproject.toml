@@ -47,7 +47,6 @@ documentation = "https://javidahmed64592.github.io/template-python"
 ci-pyproject-version = "template_python.workflows:print_version_pyproject"
 ci-pyproject-name = "template_python.workflows:print_name_pyproject"
 ci-uv-lock-version = "template_python.workflows:print_version_uv_lock"
-example-entrypoint = "template_python.main:example_function"
 
 [tool.hatch.metadata]
 allow-direct-references = true

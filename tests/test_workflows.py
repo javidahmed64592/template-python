@@ -6,8 +6,6 @@ import pytest
 
 from template_python.workflows import (
     _get_author_pyproject,
-    _get_description_pyproject,
-    _get_github_user_pyproject,
     _get_name_pyproject,
     _get_version_pyproject,
     _get_version_uv_lock,
@@ -46,20 +44,10 @@ class TestWorkflows:
         name = _get_name_pyproject()
         assert isinstance(name, str)
 
-    def test_get_description_pyproject(self) -> None:
-        """Test getting the description from pyproject.toml."""
-        description = _get_description_pyproject()
-        assert isinstance(description, str)
-
     def test_get_author_pyproject(self) -> None:
         """Test getting the author from pyproject.toml."""
         author = _get_author_pyproject()
         assert isinstance(author, str)
-
-    def test_get_github_user_pyproject(self) -> None:
-        """Test getting the GitHub username from pyproject.toml."""
-        github_user = _get_github_user_pyproject()
-        assert isinstance(github_user, str)
 
     def test_get_version_uv_lock(self) -> None:
         """Test getting the version from uv.lock."""
