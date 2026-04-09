@@ -53,6 +53,14 @@ def _get_author_pyproject() -> str:
 
 
 @cache
+def _get_github_user_pyproject() -> str:
+    """Get the GitHub username from pyproject.toml."""
+    pyproject = _load_pyproject()
+    repo_url = str(pyproject["project"]["urls"]["repository"])
+    return repo_url.split("/")[-2]
+
+
+@cache
 def _get_version_uv_lock() -> str:
     """Get the version from uv.lock."""
     name = _get_name_pyproject()

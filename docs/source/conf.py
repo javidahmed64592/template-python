@@ -11,6 +11,7 @@ from pathlib import Path
 from template_python.workflows import (
     _get_author_pyproject,
     _get_description_pyproject,
+    _get_github_user_pyproject,
     _get_name_pyproject,
     _get_version_pyproject,
 )
@@ -20,7 +21,6 @@ sys.path.insert(0, str(Path(__file__).parents[2].resolve()))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-# TEMPLATE NOTE: Update these values for your specific project
 
 project = _get_name_pyproject().replace("-", " ").title()
 copyright = f"{datetime.now().year}, {_get_author_pyproject()}"  # noqa: A001
@@ -99,7 +99,7 @@ html_theme = "furo"
 # Theme options
 html_theme_options = {
     "description": _get_description_pyproject(),
-    "github_user": "javidahmed64592",  # TEMPLATE NOTE: Update for your GitHub username
+    "github_user": _get_github_user_pyproject(),
     "github_repo": _get_name_pyproject(),
     "github_button": True,
     "github_banner": True,
