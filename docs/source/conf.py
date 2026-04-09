@@ -85,8 +85,7 @@ intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
 }
 
-templates_path = ["_templates"]
-exclude_patterns: list[str] = ["*.j2"]  # Exclude Jinja2 template files
+exclude_patterns: list[str] = []
 
 # -- RST substitutions -------------------------------------------------------
 # These variables are automatically available in all RST files as |variable_name|
