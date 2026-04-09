@@ -13,15 +13,21 @@ and deployment.
 
 .. toctree::
    :maxdepth: 2
-   :caption: API Reference:
-
-   api
-
-.. toctree::
-   :maxdepth: 2
    :caption: Workflows:
 
    workflows
+
+API Reference
+=============
+
+Complete API documentation for all modules and functions.
+
+.. autosummary::
+   :toctree: _autosummary
+   :recursive:
+   :caption: API Reference
+
+   template_python
 
 Indices and tables
 ==================

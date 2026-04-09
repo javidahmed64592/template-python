@@ -93,6 +93,7 @@ exclude_patterns: list[str] = ["*.j2"]  # Exclude Jinja2 template files
 
 rst_prolog = f"""
 .. |project_name| replace:: {project}
+.. |package_name| replace:: {package_name}
 """
 
 # -- Options for HTML output -------------------------------------------------
