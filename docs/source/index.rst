@@ -6,14 +6,14 @@ Python project structure with comprehensive tooling for development, testing,
 and deployment.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Software Maintenance Guide:
+   :maxdepth: 3
+   :caption: Software Maintenance Guide
 
    smg
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Workflows:
+   :maxdepth: 3
+   :caption: Workflows
 
    workflows
 
