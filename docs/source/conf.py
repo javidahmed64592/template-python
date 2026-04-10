@@ -9,9 +9,9 @@ from datetime import datetime
 from pathlib import Path
 
 from template_python.workflows import (
-    _get_author_pyproject,
-    _get_name_pyproject,
-    _get_version_pyproject,
+    get_author_from_pyproject,
+    get_name_from_pyproject,
+    get_version_from_pyproject,
 )
 
 # Add the project root to sys.path for autodoc
@@ -20,11 +20,11 @@ sys.path.insert(0, str(Path(__file__).parents[2].resolve()))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = _get_name_pyproject().replace("-", " ").title()
-copyright = f"{datetime.now().year}, {_get_author_pyproject()}"  # noqa: A001
-author = _get_author_pyproject()
-release = _get_version_pyproject()
-package_name = _get_name_pyproject().replace("-", "_")
+project = get_name_from_pyproject().replace("-", " ").title()
+copyright = f"{datetime.now().year}, {get_author_from_pyproject()}"  # noqa: A001
+author = get_author_from_pyproject()
+release = get_version_from_pyproject()
+package_name = get_name_from_pyproject().replace("-", "_")
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
