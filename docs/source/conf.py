@@ -35,7 +35,6 @@ extensions = [
     "sphinx.ext.napoleon",  # Support Google/NumPy style docstrings
     "sphinx.ext.viewcode",  # Add links to highlighted source code
     "sphinx.ext.intersphinx",  # Link to other project documentation
-    "myst_parser",  # Markdown support
     "sphinx_autodoc_typehints",  # Better type hint rendering
 ]
 
@@ -69,17 +68,6 @@ autodoc_typehints_description_target = "documented"
 # Autosummary settings
 autosummary_generate = True
 
-# MyST parser settings (Markdown support)
-myst_enable_extensions = [
-    "colon_fence",  # ::: fences
-    "deflist",  # Definition lists
-    "html_image",  # HTML images
-    "linkify",  # Auto-link URLs
-    "replacements",  # Text replacements
-    "smartquotes",  # Smart quotes
-    "tasklist",  # Task lists [ ]
-]
-myst_heading_anchors = 3
 # Intersphinx mapping to link to other projects
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
