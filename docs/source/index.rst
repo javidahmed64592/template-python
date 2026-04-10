@@ -10,18 +10,6 @@ and deployment.
 
    ``Settings > Pages > Source: GitHub Actions > Save``
 
-.. toctree::
-   :maxdepth: 3
-   :caption: Software Maintenance Guide
-
-   smg
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Workflows
-
-   workflows
-
 API Reference
 =============
 
@@ -33,6 +21,21 @@ Complete API documentation for all modules and functions.
    :caption: API Reference
 
    template_python
+
+Detailed Documentation
+======================
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Software Maintenance Guide
+
+   smg
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Workflows
+
+   workflows
 
 Indices and tables
 ==================
