@@ -11,16 +11,11 @@ This repository can be used as a template for a Python application.
 <!-- omit from toc -->
 ## Table of Contents
 - [Implementation Guide](#implementation-guide)
-- [Documentation](#documentation)
 - [License](#license)
 
 ## Implementation Guide
 
 TODO: Write this section.
-
-## Documentation
-
-Access the documentation at: https://javidahmed64592.github.io/template-python/
 
 ## License
 
