@@ -1,5 +1,4 @@
 [![Python](https://img.shields.io/badge/Python-3.13-3776AB.svg?style=flat&logo=python&logoColor=ffd343)](https://docs.python.org/3.13/)
-[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![CI](https://img.shields.io/github/actions/workflow/status/javidahmed64592/template-python/ci.yml?branch=main&style=flat-square&label=CI&logo=github)](https://github.com/javidahmed64592/template-python/actions/workflows/ci.yml)
 [![Build](https://img.shields.io/github/actions/workflow/status/javidahmed64592/template-python/build.yml?branch=main&style=flat-square&label=Build&logo=github)](https://github.com/javidahmed64592/template-python/actions/workflows/build.yml)
 [![Docs](https://img.shields.io/github/actions/workflow/status/javidahmed64592/template-python/docs.yml?branch=main&style=flat-square&label=Docs&logo=github)](https://github.com/javidahmed64592/template-python/actions/workflows/docs.yml)
@@ -10,6 +9,7 @@
 This repository can be used as a template for a Python application.
 
 <!-- omit from toc -->
+## Table of Contents
 - [Implementation Guide](#implementation-guide)
 - [Documentation](#documentation)
 - [License](#license)
