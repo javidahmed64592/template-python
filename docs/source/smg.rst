@@ -18,6 +18,14 @@ Backend (Python)
    :target: https://github.com/astral-sh/ruff
    :alt: Ruff
 
+.. image:: https://img.shields.io/badge/mypy-Latest-2A6DB2?style=flat-square
+   :target: https://mypy.readthedocs.io/
+   :alt: Mypy
+
+.. image:: https://img.shields.io/badge/Sphinx-Latest-000000?style=flat-square&logo=sphinx&logoColor=white
+   :target: https://www.sphinx-doc.org/
+   :alt: Sphinx
+
 Installing Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -52,6 +60,7 @@ This project uses Sphinx for documentation. To build the documentation:
 
 .. code-block:: sh
 
+   uv run sphinx-build -M clean docs/source/ docs/build/
    uv run sphinx-build -M html docs/source/ docs/build/
 
 The built documentation will be available at ``docs/build/html/index.html``.
