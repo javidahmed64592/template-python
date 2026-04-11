@@ -6,8 +6,8 @@ runs:
   steps:
     - uses: ./.github/actions/setup/install-python-docs
       if: github.event.repository.name == 'template-python'
-    # - uses: javidahmed64592/template-python/.github/actions/setup/install-python-docs@main
-    #   if: github.event.repository.name != 'template-python'
+    - uses: javidahmed64592/template-python/.github/actions/setup/install-python-docs@main
+      if: github.event.repository.name != 'template-python'
 
     - name: Build docs
       run: |
