@@ -83,6 +83,13 @@ class TestWorkflows:
         expected_prolog = ".. |key1| replace:: value1\n.. |key2| replace:: value2"
         assert prolog == expected_prolog
 
+    def test_get_rst_prolog_mismatched_keys_values(self) -> None:
+        """Test generating an RST prolog with mismatched keys and values."""
+        keys = ["key1", "key2"]
+        values = ["value1"]
+        with pytest.raises(ValueError, match=r"Keys and values must have the same length."):
+            get_rst_prolog(keys, values)
+
     def test_print_version_pyproject(self) -> None:
         """Test printing the version from `pyproject.toml`."""
         print_version_pyproject()
