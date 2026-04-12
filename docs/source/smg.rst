@@ -1,7 +1,7 @@
 Software Maintenance Guide
 ===========================
 
-This document outlines how to configure and setup a development environment to work on this Python application.
+This document outlines how to configure and setup a development environment to work on this codebase.
 
 Backend (Python)
 ----------------
@@ -48,10 +48,25 @@ To include extra dependencies:
 Testing, Linting, and Type Checking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- **Lint code:** ``uv run ruff check .``
-- **Format code:** ``uv run ruff format .``
-- **Type check:** ``uv run mypy .``
-- **Run tests:** ``uv run pytest``
+.. code-block:: sh
+
+   # Lint code
+   uv run ruff check .
+
+   # Format code
+   uv run ruff format .
+
+   # Type check
+   uv run mypy .
+
+   # Run tests
+   uv run pytest
+
+   # Security scan
+   uv run bandit -r |package_name|/
+
+   # Audit dependencies
+   uv run pip-audit
 
 Building Documentation
 ~~~~~~~~~~~~~~~~~~~~~~
