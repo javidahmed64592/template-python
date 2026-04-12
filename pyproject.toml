@@ -69,7 +69,7 @@ branch = true
 source = ["template_python", "tests"]
 
 [tool.coverage.report]
-fail_under = 80
+fail_under = 95
 skip_covered = false
 show_missing = true
 
