@@ -3,7 +3,7 @@
 import logging
 from unittest.mock import MagicMock
 
-from template_python.logging_setup import add_console_handler, add_file_handler
+from template_python.logging_setup import add_console_handler, add_file_handler, setup_default_logging
 
 
 class TestAddHandlers:
@@ -23,3 +23,14 @@ class TestAddHandlers:
 
         root_logger = logging.getLogger()
         assert "RotatingFileHandler" in [handler.__class__.__name__ for handler in root_logger.handlers]
+
+
+class TestSetupDefaultLogging:
+    """Tests for the setup_default_logging function."""
+
+    def test_setup_default_logging(self) -> None:
+        """Test that setup_default_logging configures the root logger with a StreamHandler."""
+        setup_default_logging()
+
+        root_logger = logging.getLogger()
+        assert "StreamHandler" in [handler.__class__.__name__ for handler in root_logger.handlers]
