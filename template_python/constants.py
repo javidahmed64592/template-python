@@ -1,8 +1,8 @@
 """Constants for codebases using this template."""
 
 # Logging constants
-LOGGING_FORMAT = "[%(asctime)s] %(levelname)s [%(module)s]: %(message)s"
-LOGGING_DATE_FORMAT = "%d/%m/%Y | %H:%M:%S"
+LOGGING_FORMAT = "[%(asctime)s] %(module)s.%(levelname)s: %(message)s"
+LOGGING_DATE_FORMAT = "%d/%m/%Y|%H:%M:%S"
 LOGGING_LEVEL = "INFO"
 
 # Sphinx
