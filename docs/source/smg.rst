@@ -1,7 +1,7 @@
 Software Maintenance Guide
 ===========================
 
-This document outlines how to configure and setup a development environment to work on this codebase.
+This document outlines how to configure and setup a development environment to work on |project_name|.
 
 Backend (Python)
 ----------------
