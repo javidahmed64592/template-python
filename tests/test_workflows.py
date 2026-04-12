@@ -9,6 +9,7 @@ from template_python.workflows import (
     _load_uv_lock,
     get_author_from_pyproject,
     get_name_from_pyproject,
+    get_rst_prolog,
     get_version_from_pyproject,
     get_version_from_uv_lock,
     print_name_pyproject,
@@ -73,6 +74,14 @@ class TestWorkflows:
             pytest.raises(ValueError, match=rf"Package '{pyproject['project']['name']}' not found in `uv.lock`"),
         ):
             get_version_from_uv_lock()
+
+    def test_get_rst_prolog(self) -> None:
+        """Test generating an RST prolog."""
+        keys = ["key1", "key2"]
+        values = ["value1", "value2"]
+        prolog = get_rst_prolog(keys, values)
+        expected_prolog = ".. |key1| replace:: value1\n.. |key2| replace:: value2"
+        assert prolog == expected_prolog
 
     def test_print_version_pyproject(self) -> None:
         """Test printing the version from `pyproject.toml`."""

@@ -57,6 +57,14 @@ def get_version_from_uv_lock() -> str:
     raise ValueError(error_msg)
 
 
+def get_rst_prolog(keys: list[str], values: list[str]) -> str:
+    """Generate an RST prolog with the given keys and values."""
+    if len(keys) != len(values):
+        error_msg = "Keys and values must have the same length."
+        raise ValueError(error_msg)
+    return "\n".join(f".. |{k}| replace:: {v}" for k, v in zip(keys, values, strict=False))
+
+
 def print_version_pyproject() -> None:
     """Run `ci-pyproject-version` to echo the version from `pyproject.toml`."""
     print(get_version_from_pyproject())
