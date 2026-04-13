@@ -4,12 +4,14 @@ from unittest.mock import patch
 
 import pytest
 
+from template_python.models import SphinxConfig
 from template_python.workflows import (
     _load_pyproject,
     _load_uv_lock,
     get_author_from_pyproject,
     get_name_from_pyproject,
     get_rst_prolog,
+    get_sphinx_config,
     get_version_from_pyproject,
     get_version_from_uv_lock,
     print_name_pyproject,
@@ -89,6 +91,11 @@ class TestWorkflows:
         values = ["value1"]
         with pytest.raises(ValueError, match=r"Keys and values must have the same length."):
             get_rst_prolog(keys, values)
+
+    def test_get_sphinx_config(self) -> None:
+        """Test getting the Sphinx configuration."""
+        config = get_sphinx_config()
+        assert isinstance(config, SphinxConfig)
 
     def test_print_version_pyproject(self) -> None:
         """Test printing the version from `pyproject.toml`."""

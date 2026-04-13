@@ -5,6 +5,9 @@ from functools import cache
 
 from pyhere import here
 
+from template_python.constants import SPHINX_EXTENSIONS, SPHINX_HTML_THEME
+from template_python.models import SphinxConfig
+
 
 @cache
 def _load_pyproject() -> dict:
@@ -63,6 +66,17 @@ def get_rst_prolog(keys: list[str], values: list[str]) -> str:
         error_msg = "Keys and values must have the same length."
         raise ValueError(error_msg)
     return "\n".join(f".. |{k}| replace:: {v}" for k, v in zip(keys, values, strict=False))
+
+
+def get_sphinx_config() -> SphinxConfig:
+    """Get the Sphinx configuration from `pyproject.toml`."""
+    return SphinxConfig(
+        repo_name=get_name_from_pyproject(),
+        version=get_version_from_pyproject(),
+        author=get_author_from_pyproject(),
+        extensions=SPHINX_EXTENSIONS,
+        html_theme=SPHINX_HTML_THEME,
+    )
 
 
 def print_version_pyproject() -> None:
