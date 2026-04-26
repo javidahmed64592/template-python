@@ -25,11 +25,11 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "bandit>=1.9.4",
-    "mypy>=1.20.1",
+    "mypy>=1.20.2",
     "pip-audit>=2.10.0",
     "pytest>=9.0.3",
     "pytest-cov>=7.1.0",
-    "ruff>=0.15.11",
+    "ruff>=0.15.12",
     "validate-pyproject>=0.25.0",
 ]
 docs = [
