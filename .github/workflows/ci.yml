@@ -54,6 +54,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: javidahmed64592/actions-template-python/actions/ci/version-check@main
+        with:
+          frontend-dir-exists: false
 
   frontend:
     runs-on: ubuntu-latest
