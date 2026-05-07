@@ -18,14 +18,14 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
 ]
 dependencies = [
-    "pydantic>=2.13.3",
+    "pydantic>=2.13.4",
     "pyhere>=1.0.3",
 ]
 
 [project.optional-dependencies]
 dev = [
     "bandit>=1.9.4",
-    "mypy>=1.20.2",
+    "mypy>=2.0.0",
     "pip-audit>=2.10.0",
     "pytest>=9.0.3",
     "pytest-cov>=7.1.0",
