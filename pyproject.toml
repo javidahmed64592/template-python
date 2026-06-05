@@ -25,11 +25,11 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "bandit>=1.9.4",
-    "mypy>=2.1.0",
     "pip-audit>=2.10.0",
     "pytest>=9.0.3",
     "pytest-cov>=7.1.0",
     "ruff>=0.15.13",
+    "ty>=0.0.43",
     "validate-pyproject>=0.25.0",
 ]
 docs = [
@@ -163,19 +163,3 @@ line-ending = "auto"
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
-
-[tool.mypy]
-warn_unused_configs = true
-disallow_incomplete_defs = true
-check_untyped_defs = true
-warn_redundant_casts = true
-warn_unused_ignores = true
-warn_return_any = true
-warn_unreachable = true
-pretty = true
-
-[[tool.mypy.overrides]]
-module = [
-    "pyhere.*"
-]
-ignore_missing_imports = true
