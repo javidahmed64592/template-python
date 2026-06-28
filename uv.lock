@@ -1010,6 +1010,7 @@ dev = [
     { name = "pytest-cov" },
     { name = "ruff" },
     { name = "ty" },
+    { name = "uv-align" },
     { name = "validate-pyproject" },
 ]
 docs = [
@@ -1035,6 +1036,7 @@ requires-dist = [
     { name = "sphinx-autodoc-typehints", marker = "extra == 'docs'", specifier = ">=3.11.0" },
     { name = "sphinx-substitution-extensions", marker = "extra == 'docs'", specifier = ">=2026.6.17" },
     { name = "ty", marker = "extra == 'dev'", specifier = ">=0.0.51" },
+    { name = "uv-align", marker = "extra == 'dev'", specifier = ">=0.1.0" },
     { name = "validate-pyproject", marker = "extra == 'dev'", specifier = ">=0.25.0" },
 ]
 provides-extras = ["dev", "docs"]
@@ -1146,6 +1148,18 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz", hash = "sha256:231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c", size = 433602, upload-time = "2026-05-07T16:13:18.596Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl", hash = "sha256:9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897", size = 131087, upload-time = "2026-05-07T16:13:17.151Z" },
+]
+
+[[package]]
+name = "uv-align"
+version = "0.1.0"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5f/d3/312f074114eebdef9ba82585c7277e255f4846516dcd92ec3f3485488ef5/uv_align-0.1.0-py3-none-macosx_10_12_x86_64.whl", hash = "sha256:fe1413c2b70c98b275a8a38569328f32366ff639578f9cdfabc48f0c0cd2c39c", size = 702126, upload-time = "2026-06-28T20:01:04.813Z" },
+    { url = "https://files.pythonhosted.org/packages/7e/07/cc0a99140234182507d0bf52b04ee12fc040c09e2ae597e59c3e08696634/uv_align-0.1.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:899d35c1e24e3091ac2d93c8fd9311a6096fda5638e0aae2915b9320c3d39152", size = 686169, upload-time = "2026-06-28T20:01:06.584Z" },
+    { url = "https://files.pythonhosted.org/packages/6d/9f/4f0b4c0883dfb1f2bde679c0910617335afba5e424690f4b0d9db96e07e7/uv_align-0.1.0-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:cbef0302e0be7e8b47c5d4f6fe57d1644770327ff61a3bd663fcbc543990c460", size = 731768, upload-time = "2026-06-28T20:01:08.218Z" },
+    { url = "https://files.pythonhosted.org/packages/ff/ad/84c500bb8dfb4b56119b9aba2ebb27ae673d1be547e994a2ec5e4f4d5e11/uv_align-0.1.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d49837f8a129f76e8c9edef24374f2525b7b42fd6df2a3041f0bc098b9f92178", size = 747810, upload-time = "2026-06-28T20:01:10.31Z" },
+    { url = "https://files.pythonhosted.org/packages/a2/fb/05642b1ec7a9399d336b18cc649c7ee0f554a4faeca983aaff9443f5b4ea/uv_align-0.1.0-py3-none-win_amd64.whl", hash = "sha256:5181473c39f1a130b776f15bc3293980b5850626461b26b31f06f6e6394e5ade", size = 555255, upload-time = "2026-06-28T20:01:11.945Z" },
 ]
 
 [[package]]
