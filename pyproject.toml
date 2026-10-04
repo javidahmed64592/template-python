@@ -30,7 +30,7 @@ dev = [
     "pytest-cov>=7.1.0",
     "ruff>=0.16.10",
     "ty>=0.0.84",
-    "uv-align>=0.1.4",
+    "uv-align>=0.2.0",
     "validate-pyproject>=0.26",
 ]
 docs = [

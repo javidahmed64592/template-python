@@ -366,11 +366,11 @@ wheels = [
 
 [[package]]
 name = "filelock"
-version = "4.0.9"
+version = "4.0.10"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/70/51/2bc9e529f154fad99b6cd0073e609291eb32fd23581b32362d33d164d316/filelock-4.0.9.tar.gz", hash = "sha256:635e7d67fa92654eed444e75e9ca18426d34e77ad9c469bf4373f75a932f7b22", size = 251200, upload-time = "2026-10-01T23:09:14.029Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/4b/51/a182494d1d8dde1240bff84dda57d48165d982e59582ce8f167e8e3d7628/filelock-4.0.10.tar.gz", hash = "sha256:00d6a81f976a6332551c2c10f39e12b4abb7e01c64d4c497b81a615bc9186f1f", size = 252487, upload-time = "2026-10-03T23:40:48.884Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/01/4f/83454fafd628e1e7e1726d74e44fb2332be5969d04c6182ca1fecb6c580e/filelock-4.0.9-py3-none-any.whl", hash = "sha256:9287fd61b99a806e5202be29a83034c0808a1b9830e820537c2f5773981f7eeb", size = 110368, upload-time = "2026-10-01T23:09:12.391Z" },
+    { url = "https://files.pythonhosted.org/packages/5b/2a/4b1ea3f2180be251a5cff1e70c8a5b7994ffa5c8eab8937901f8a9db58fe/filelock-4.0.10-py3-none-any.whl", hash = "sha256:698048d158dc3c9e18cc5e88b3efdd4bd0e77d76686b22adb4511cc4b2c2f0db", size = 111193, upload-time = "2026-10-03T23:40:47.334Z" },
 ]
 
 [[package]]
@@ -738,11 +738,11 @@ wheels = [
 
 [[package]]
 name = "platformdirs"
-version = "4.12.2"
+version = "4.12.3"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/17/c8/721b3855fe457da514fe249247d404b9b39c5d16532278f70ebaa6acf18b/platformdirs-4.12.2.tar.gz", hash = "sha256:eab5f70271a490ef74618bb314fbb86e3c7e82fa3b9c922c2ea0e0a1a155d329", size = 59353, upload-time = "2026-09-29T18:27:56.009Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/42/23/4a86fc741c38c5b69792a4ef954b281afa69bea9f083f881de1b0d23bc07/platformdirs-4.12.3.tar.gz", hash = "sha256:427fc0bb321ae0c5b037fa03238ca74820437be162e78b4848c4d4055b9b766c", size = 59538, upload-time = "2026-10-03T23:40:46.595Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d0/89/446044f33aba0348d35e433f56d12206d010a5281a1df54054d4cfb82388/platformdirs-4.12.2-py3-none-any.whl", hash = "sha256:29dbf06d96c500bc6bdbce75fb0a14d63279c93b1842f97e72a135b33e856983", size = 32457, upload-time = "2026-09-29T18:27:54.43Z" },
+    { url = "https://files.pythonhosted.org/packages/c5/9b/6ce1ead737fe496611bda600c263b9a11ae7bd8f41bb13f9bd7e0a2c37a4/platformdirs-4.12.3-py3-none-any.whl", hash = "sha256:080f3b39423b5abfca9a23d84c4e9795f54d395cd8459867a8ded44084fcd5f8", size = 32493, upload-time = "2026-10-03T23:40:45.104Z" },
 ]
 
 [[package]]
@@ -1192,7 +1192,7 @@ requires-dist = [
     { name = "sphinx-autodoc-typehints", marker = "extra == 'docs'", specifier = ">=3.13.8" },
     { name = "sphinx-substitution-extensions", marker = "extra == 'docs'", specifier = ">=2026.8.13.1" },
     { name = "ty", marker = "extra == 'dev'", specifier = ">=0.0.84" },
-    { name = "uv-align", marker = "extra == 'dev'", specifier = ">=0.1.4" },
+    { name = "uv-align", marker = "extra == 'dev'", specifier = ">=0.2.0" },
     { name = "validate-pyproject", marker = "extra == 'dev'", specifier = ">=0.26" },
 ]
 provides-extras = ["dev", "docs"]
@@ -1299,14 +1299,14 @@ wheels = [
 
 [[package]]
 name = "uv-align"
-version = "0.1.4"
+version = "0.2.0"
 source = { registry = "https://pypi.org/simple" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/25/1b/8765404bb27a4ed3ade7fe4ad4e6d320eb55c936b58299d1b4c82546095f/uv_align-0.1.4-py3-none-macosx_10_12_x86_64.whl", hash = "sha256:4409e42caae00dd5a52bb5a58d0e867b92ef9ff34dddc52f1d7b9742d777cf4f", size = 719683, upload-time = "2026-07-05T18:19:55.766Z" },
-    { url = "https://files.pythonhosted.org/packages/13/f0/d51fa3751a9d3c8a450fa9ae1625b6b673625c3ccfd52e7cd223c8d0a476/uv_align-0.1.4-py3-none-macosx_11_0_arm64.whl", hash = "sha256:17bd4467b603e57e357e1c4006af378b675c39c1af54afd8a280bb8db950e127", size = 706068, upload-time = "2026-07-05T18:19:57.539Z" },
-    { url = "https://files.pythonhosted.org/packages/72/f6/b6e3a0b7969b4c836e3583bdb84a443c39691f11874a3fc22c41fdce7951/uv_align-0.1.4-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:0bd653d37ada9bf4cec8aa7451e7af04ce663eb65be06e8a2a72ddd967afe233", size = 754271, upload-time = "2026-07-05T18:19:59.032Z" },
-    { url = "https://files.pythonhosted.org/packages/02/46/f4627e63dc2f99e0814841104e7175f17756b40f0e23d7e966cfafeb7bb0/uv_align-0.1.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d9b8683a301ca88c7156faa20fd1aa6c67fd005f0aab8a5dc4046ab0777432c9", size = 770649, upload-time = "2026-07-05T18:20:00.591Z" },
-    { url = "https://files.pythonhosted.org/packages/54/48/7ec6cc4354c0e22e381b9e9d0da625bd9364196de999589c21ee53a7fc68/uv_align-0.1.4-py3-none-win_amd64.whl", hash = "sha256:0b2071a6637ddc7aefb546fcba272fd41106de3b20640a55b7a99ccc64004777", size = 574862, upload-time = "2026-07-05T18:20:02.253Z" },
+    { url = "https://files.pythonhosted.org/packages/58/8a/0638aec984213d012bd79316097288f245803bb3932203583ce067699e37/uv_align-0.2.0-py3-none-macosx_10_12_x86_64.whl", hash = "sha256:66bbe9da4eb5b29304ab231914711bb2527b302bb8c82c82d3f1b5de1e7b8b3a", size = 719384, upload-time = "2026-10-04T00:58:16.353Z" },
+    { url = "https://files.pythonhosted.org/packages/98/fa/091bfcbc10ecd6b2d8286a6628dcb6128082f89b09b986fbdd4d5bdd4d2d/uv_align-0.2.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:af55cfb9c7805c7530d659129bd84257812ed74429266ae06ed8ff2f1025de50", size = 704595, upload-time = "2026-10-04T00:58:18.434Z" },
+    { url = "https://files.pythonhosted.org/packages/f0/49/277fcb39e3395edcda69a967b9b954b88ce7774118746d37efc547726fb4/uv_align-0.2.0-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:2d9815a481d1eaac2f16fa444e3ab96fd824fc327f1c24ac830ef5cf2f7b76b0", size = 753563, upload-time = "2026-10-04T00:58:19.903Z" },
+    { url = "https://files.pythonhosted.org/packages/ed/b5/e57efdddc9ade1fb52d629c43b030081e31ccaa3f3951d69af71994149f8/uv_align-0.2.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8252545449f2be3dd4e4a851535494ef867b8fadb49ac6c2a11e9c2b43f3f577", size = 771554, upload-time = "2026-10-04T00:58:21.859Z" },
+    { url = "https://files.pythonhosted.org/packages/00/fe/e6f7664d97b8fc61532e57b4046b948dca61f2c6219e9fe78d126fe74d80/uv_align-0.2.0-py3-none-win_amd64.whl", hash = "sha256:8555f42876ea44c914967e5459b57c8e2cf164e055130e109972161f4942d3b7", size = 585634, upload-time = "2026-10-04T00:58:23.477Z" },
 ]
 
 [[package]]
